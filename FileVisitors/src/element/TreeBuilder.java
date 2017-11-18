@@ -5,6 +5,7 @@
  */
 package element;
 
+import fileVisitors.myTree.MyTree;
 import fileVisitors.visitor.VisitorI;
 
 /**
@@ -13,9 +14,22 @@ import fileVisitors.visitor.VisitorI;
  */
 public class TreeBuilder implements ElementI{
 
+    MyTree tree = null;
+    
     @Override
     public void accept(VisitorI visitor) {
-        
+       visitor.visit(this);
     }
     
+    public void setTree(MyTree treeIn){
+        this.tree = treeIn;
+    }
+    
+    public MyTree getTree(){
+        return tree;
+    }
+
+    public void insert(String wordIn) {
+        this.tree.insert(wordIn);
+    }
 }
