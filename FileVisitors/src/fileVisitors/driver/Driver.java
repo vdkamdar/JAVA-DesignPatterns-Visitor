@@ -1,5 +1,7 @@
 package fileVisitors.driver;
 
+import fileVisitors.util.FileProcessor;
+import fileVisitors.util.Logger;
 import java.util.ArrayList;
 
 /**
@@ -26,7 +28,7 @@ public class Driver {
                 try {
                     if (args[args.length - 1].matches(".*[0-4].*")) {
                         debugLevel = Integer.parseInt(args[args.length - 1]);
-                        MyLogger.setDebugValue(debugLevel);
+                        Logger.setDebugValue(debugLevel);
                     } else {
                         throw new IllegalArgumentException("The argument " + args[args.length - 1] + " is invalid. Please enter debug level between 0 and 4.");
                     }
