@@ -10,8 +10,6 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import wordTree.myTree.MyTree;
-
 /**
  * @version 5.0
  * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
