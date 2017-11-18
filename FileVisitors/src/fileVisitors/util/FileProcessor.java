@@ -14,8 +14,7 @@ import java.util.logging.Logger;
  * @version 5.0
  * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
  */
-public class FileProcessor {
-
+public class FileProcessor{
     private String inputFileName = "", outputFileName = "";
     private Scanner in = null;
 
@@ -55,7 +54,7 @@ public class FileProcessor {
      *
      * @param sf
      */
-    public synchronized String readLine() {
+    public String readLine() {
         String line = "";
         try {
             if (in == null) {

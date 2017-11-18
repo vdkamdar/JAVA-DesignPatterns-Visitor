@@ -1,5 +1,7 @@
 package fileVisitors.myTree;
 
+import fileVisitors.util.Logger;
+
 
 /**
  * @version 4.0
@@ -19,7 +21,7 @@ public class Node {
      * @param wordIn
      */
     public Node(String wordIn) {
-        MyLogger.writeMessage("Constructor called - " + this.toString(), MyLogger.DebugLevel.CONSTRUCTOR);
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
         this.word = wordIn;
         this.wordCount = 1;
         this.left = null;
