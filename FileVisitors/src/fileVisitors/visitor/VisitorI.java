@@ -1,9 +1,11 @@
 package fileVisitors.visitor;
 
+import element.ElementI;
+
 /**
  *
  * @author anirtek
  */
-public class VisitorI {
-    
+public interface VisitorI {
+    public void visit(ElementI element);
 }
