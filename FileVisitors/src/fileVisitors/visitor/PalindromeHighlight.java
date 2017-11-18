@@ -1,10 +1,8 @@
 package fileVisitors.visitor;
 
 import element.ElementI;
-import element.TreeBuilder;
 import fileVisitors.myTree.MyTree;
-import fileVisitors.util.FileProcessor;
-import fileVisitors.util.InputProcessor;
+import fileVisitors.myTree.Node;
 import fileVisitors.util.PalindromeCheck;
 
 /**
@@ -13,38 +11,42 @@ import fileVisitors.util.PalindromeCheck;
  */
 public class PalindromeHighlight implements VisitorI {
 
-    FileProcessor fp = null;
-    InputProcessor ip = null;
-    TreeBuilder builder = null;
     MyTree tree = null;
     PalindromeCheck check = null;
 
+    //getTree from PopulateVisitor here or driver?
+    
     @Override
     public void visit(ElementI element) {
         String line = "";
         check = new PalindromeCheck();
-        
-        while ((line = fp.readLine()) != null) {
-            String[] inputParse = ip.processInput(line);
-            for (int i = 0; i < inputParse.length; i++) {
-                if(check.isPalindrome(inputParse[i])) {
-                    if(isLengthGreaterThanThree(inputParse[i])){
-                        capitalizeWord(inputParse[i]);
-                    }
-                }
-            }
-        }
+        traverse(tree.root);//??
     }
-    
-    boolean isLengthGreaterThanThree(String nodeWord){
-	if(nodeWord.length() > 3){
-		return true;
+
+    void traverse(Node current_node) {
+        if (current_node == null) {
+            return;
+        }
+        
+        traverse(current_node.getLeft());
+        if (check.isPalindrome(current_node.getWord()) && isLengthGreaterThanThree(current_node.getWord())) {
+            capitalizeWord(current_node);
+        }
+        traverse(current_node.getRight());
+    }
+
+    boolean isLengthGreaterThanThree(String nodeWord) {
+        if (nodeWord.length() > 3) {
+            return true;
         }
         return false;
     }
-    
-    void capitalizeWord(String nodeWord){   
-	nodeWord.toUpperCase();
+
+    void capitalizeWord(Node current_node) {
+        current_node.setWord(current_node.getWord().toUpperCase());
     }
 
+    public void setTree(MyTree tree){
+        this.tree = tree;
+    }
 }
