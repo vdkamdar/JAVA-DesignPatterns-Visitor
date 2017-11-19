@@ -18,21 +18,20 @@ public class PalindromeHighlight implements VisitorI {
     
     @Override
     public void visit(ElementI element) {
-        String line = "";
         check = new PalindromeCheck();
-        traverse(tree.root);//??
+        traverseTree(tree.root);//??
     }
 
-    void traverse(Node current_node) {
+    void traverseTree(Node current_node) {
         if (current_node == null) {
             return;
         }
         
-        traverse(current_node.getLeft());
+        traverseTree(current_node.getLeft());
         if (check.isPalindrome(current_node.getWord()) && isLengthGreaterThanThree(current_node.getWord())) {
             capitalizeWord(current_node);
         }
-        traverse(current_node.getRight());
+        traverseTree(current_node.getRight());
     }
 
     boolean isLengthGreaterThanThree(String nodeWord) {
@@ -46,6 +45,10 @@ public class PalindromeHighlight implements VisitorI {
         current_node.setWord(current_node.getWord().toUpperCase());
     }
 
+    public MyTree getTree(){
+        return tree;
+    }
+    
     public void setTree(MyTree tree){
         this.tree = tree;
     }
