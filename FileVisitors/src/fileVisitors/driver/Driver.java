@@ -74,15 +74,15 @@ public class Driver {
         builder.accept(pVisitor);
         
         PalindromeHighlight phVisitor = new PalindromeHighlight();
-        phVisitor.setTree(pVisitor.getTree());
+        builder.setTree(pVisitor.getTree());
         builder.accept(phVisitor);
         
         PrimeLength plVisitor = new PrimeLength();
-        plVisitor.setTree(phVisitor.getTree());
+        builder.setTree(phVisitor.getTree());
         builder.accept(plVisitor);
         
         PrintTree ptVisitor = new PrintTree();
-        ptVisitor.setTree(plVisitor.getTree());
+        builder.setTree(plVisitor.getTree());
         builder.accept(ptVisitor);
 
         /**
