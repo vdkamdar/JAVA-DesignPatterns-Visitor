@@ -8,6 +8,7 @@ import fileVisitors.util.Logger;
 import fileVisitors.visitor.PalindromeHighlight;
 import fileVisitors.visitor.PopulateVisitor;
 import fileVisitors.visitor.PrimeLength;
+import fileVisitors.visitor.PrintTree;
 import java.util.ArrayList;
 
 /**
@@ -67,20 +68,22 @@ public class Driver {
         builder.setTree(tree);
         
         PopulateVisitor pVisitor = new PopulateVisitor();
-        
         pVisitor.setFileProcessor(fileProc);
         pVisitor.setInputProcessor(inputProc);
         pVisitor.setTreeBuilder(builder);
-        
         builder.accept(pVisitor);
         
         PalindromeHighlight phVisitor = new PalindromeHighlight();
+        phVisitor.setTree(pVisitor.getTree());
         builder.accept(phVisitor);
         
         PrimeLength plVisitor = new PrimeLength();
+        plVisitor.setTree(phVisitor.getTree());
         builder.accept(plVisitor);
         
-        
+        PrintTree ptVisitor = new PrintTree();
+        ptVisitor.setTree(plVisitor.getTree());
+        builder.accept(ptVisitor);
 
         /**
          * Create instance of Results
