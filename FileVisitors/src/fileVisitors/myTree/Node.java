@@ -2,7 +2,6 @@ package fileVisitors.myTree;
 
 import fileVisitors.util.Logger;
 
-
 /**
  * @version 4.0
  * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
@@ -37,6 +36,10 @@ public class Node {
         return word;
     }
 
+    public void setWord(String newWord){
+        this.word = null;
+        this.word = newWord;
+    }
     /**
      * Setter for storing wordCount in the tree nodes.
      *
@@ -56,7 +59,7 @@ public class Node {
     }
 
     /**
-     * Geeter for left node of the root / present working node.
+     * Getter for left node of the root / present working node.
      *
      * @return
      */
