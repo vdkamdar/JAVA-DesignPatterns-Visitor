@@ -26,7 +26,7 @@ public class FileProcessor{
      * @param outputFileIn
      */
     public FileProcessor(String inputFileIn, String outputFileIn) {
-        MyLogger.writeMessage("Constructor called - " + this.toString(), MyLogger.DebugLevel.CONSTRUCTOR);
+        //Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
         if (inputFileIn == null) {
             System.err.println("Input File name is null!");
             System.exit(0);
