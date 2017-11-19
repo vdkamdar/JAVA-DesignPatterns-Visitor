@@ -6,16 +6,15 @@ import java.util.ArrayList;
  * @version 4.0
  * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
  */
-public class MyTree {
+public class MyTree{
 
     private Node root;
-    private int finalWordCount, finalCharCount, distinctWordCount = 0;
 
     /**
      * public constructor of the class
      */
     public MyTree() {
-        MyLogger.writeMessage("Constructor called - " + this.toString(), MyLogger.DebugLevel.CONSTRUCTOR);
+        //MyLogger.writeMessage("Constructor called - " + this.toString(), MyLogger.DebugLevel.CONSTRUCTOR);
         root = null;
     }
 
@@ -31,24 +30,14 @@ public class MyTree {
      * Thread-safe method for inserting the nodes.
      * @param wordIn 
      */
-    public synchronized void insert(String wordIn) {
-        MyLogger.writeMessage("Thread is running - " + this.toString(), MyLogger.DebugLevel.WORD_INSERTION);
+    public void insert(String wordIn) {
+        //MyLogger.writeMessage("Thread is running - " + this.toString(), MyLogger.DebugLevel.WORD_INSERTION);
         if (root == null) {
             this.root = new Node(wordIn);
-            finalWordCount += 1;
-            finalCharCount += wordIn.length();
-            distinctWordCount += 1;
         } else {
             Node node = searchNode(root, wordIn);
             if (node == null) {
                 insertNode(root, wordIn);
-                finalWordCount += 1;
-                finalCharCount += wordIn.length();
-                distinctWordCount += 1;
-            } else {
-                node.setWordCount(node.getWordCount() + 1); //increases by 1 always
-                finalWordCount += 1;
-                finalCharCount += wordIn.length();
             }
         }
     }
@@ -59,7 +48,7 @@ public class MyTree {
      * @param node
      * @param wordIn 
      */
-    public synchronized void insertNode(Node node, String wordIn) {
+    public void insertNode(Node node, String wordIn) {
         if (node.getWord().compareTo(wordIn) > 0) {
             if (node.getLeft() == null) {
                 node.setLeft(new Node(wordIn));
@@ -79,7 +68,7 @@ public class MyTree {
      * Searches the particular node with the input word in the tree.
      * @return Node - null if node not present, else returns the node
      */
-    public synchronized Node searchNode(Node node, String wordIn) {
+    public Node searchNode(Node node, String wordIn) {
         if (node == null) {
             return node;
         } else if (node.getWord().compareTo(wordIn) == 0) {
@@ -92,39 +81,10 @@ public class MyTree {
     }
 
     /**
-     * Performs thread-safe deletion on the tree.
-     * @param wordIn 
-     */
-    public synchronized void delete(String wordIn) {
-        MyLogger.writeMessage("Thread is running - " + this.toString(), MyLogger.DebugLevel.WORD_DELETION);
-        Node node = searchNode(root, wordIn);
-        if (node != null && node.getWordCount() != 0) {
-            finalWordCount -= 1;
-            finalCharCount -= node.getWord().length();
-            if (node.getWordCount() == 1) {
-                distinctWordCount -= 1;
-            }
-            node.setWordCount(node.getWordCount() - 1);
-        }
-    }
-
-    /**
      * Prints the tree words in the sorted fashion using in-order traversal.
      * @param current_node
      * @param results 
      */
-    public void printNodes(Node current_node, ArrayList<String> results) {
-        if (root == null) {
-            return;
-        } else if (current_node != null) {
-            printNodes(current_node.getLeft(), results);
-
-            if (current_node.getWordCount() >= 1) {
-                results.add(current_node.getWord());
-            }
-            printNodes(current_node.getRight(), results);
-        }
-    }
 
     /**
      * Prints the final counts of the tree status.
