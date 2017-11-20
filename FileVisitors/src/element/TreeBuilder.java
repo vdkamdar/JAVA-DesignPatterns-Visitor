@@ -12,14 +12,9 @@ import fileVisitors.visitor.VisitorI;
  *
  * @author vidhi
  */
-public class TreeBuilder implements ElementI{
+public class TreeBuilder {
 
     MyTree tree = null;
-    
-    @Override
-    public void accept(VisitorI visitor) {
-       visitor.visit(this);
-    }
     
     public void setTree(MyTree treeIn){
         this.tree = treeIn;
@@ -31,5 +26,9 @@ public class TreeBuilder implements ElementI{
 
     public void insert(String wordIn) {
         this.tree.insert(wordIn);
+    }
+    
+    public void getRoot(){
+        
     }
 }
