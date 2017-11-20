@@ -3,6 +3,7 @@ package fileVisitors.visitor;
 import element.ElementI;
 import fileVisitors.myTree.MyTree;
 import fileVisitors.myTree.Node;
+import fileVisitors.store.Results;
 import java.util.ArrayList;
 
 /**
@@ -10,12 +11,15 @@ import java.util.ArrayList;
  * @author anirtek
  */
 public class PrintTree implements VisitorI {
-
-    MyTree tree = null;
+   Results results = null;
+   
+    public PrintTree(Results results){
+        this.results = results;
+    }
 
     @Override
-    public void visit(ElementI element) {
-        printNodes(tree.root);//??
+    public void visit(MyTree tree) {
+        printNodes(tree.getRoot());
     }
 
     public void printNodes(Node current_node) {
@@ -23,15 +27,7 @@ public class PrintTree implements VisitorI {
             return;
         }
         printNodes(current_node.getLeft());
-        System.out.println(current_node.getWord());
+        results.storeLine(current_node.getWord());
         printNodes(current_node.getRight());
-    }
-
-    public MyTree getTree() {
-        return tree;
-    }
-
-    public void setTree(MyTree tree) {
-        this.tree = tree;
     }
 }
