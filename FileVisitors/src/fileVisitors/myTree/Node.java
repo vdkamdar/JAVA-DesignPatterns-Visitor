@@ -20,7 +20,7 @@ public class Node {
      * @param wordIn
      */
     public Node(String wordIn) {
-        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
+        Logger.writeMessage("Constructor called - " + toString(), Logger.DebugLevel.CONSTRUCTOR);
         this.word = wordIn;
         this.wordCount = 1;
         this.left = null;
@@ -97,7 +97,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Class : wordTree.myTree.Node"; //To change body of generated methods, choose Tools | Templates.
+        return "Class : fileVisitors.myTree.Node"; 
     }
 
 }

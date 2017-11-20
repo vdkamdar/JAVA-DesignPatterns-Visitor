@@ -21,7 +21,7 @@ public class InputProcessor {
 
     @Override
     public String toString() {
-        return "Class : wordTree.util.InputProcessor"; //To change body of generated methods, choose Tools | Templates.
+        return "Class : fileVisitors.util.InputProcessor"; //To change body of generated methods, choose Tools | Templates.
     }
 
 }

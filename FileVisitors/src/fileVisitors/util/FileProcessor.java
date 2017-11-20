@@ -97,7 +97,7 @@ public class FileProcessor {
 
     @Override
     public String toString() {
-        return "Class : wordTree.util.FileProcessor";
+        return "Class : fileVisitors.util.FileProcessor";
     }
 
 }

@@ -34,4 +34,10 @@ public class PrintTree implements VisitorI {
         results.storeLine(current_node.getWord());
         printNodes(current_node.getRight());
     }
+    
+    
+    @Override
+    public String toString() {
+        return "Class : fileVisitors.visitor.PrintTree";
+    }
 }

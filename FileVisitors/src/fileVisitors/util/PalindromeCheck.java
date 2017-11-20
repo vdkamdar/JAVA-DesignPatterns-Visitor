@@ -26,4 +26,10 @@ public class PalindromeCheck {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Class : fileVisitors.util.PalindromeCheck";
+    }
+    
 }

@@ -44,4 +44,10 @@ public class PopulateVisitor implements VisitorI {
     public MyTree getTree() {
         return tree;
     }
+    
+    
+    @Override
+    public String toString() {
+        return "Class : fileVisitors.visitor.PopulateVisitor";
+    }
 }

@@ -48,4 +48,11 @@ public class PalindromeHighlight implements VisitorI {
     void capitalizeWord(Node current_node) {
         current_node.setWord(current_node.getWord().toUpperCase());
     }
+
+    @Override
+    public String toString() {
+        return "Class : fileVisitors.visitor.PalindromeHighlight";
+    }
+    
+    
 }

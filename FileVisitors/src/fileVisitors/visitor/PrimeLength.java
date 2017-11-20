@@ -57,4 +57,10 @@ public class PrimeLength implements VisitorI {
     public void setTree(MyTree tree) {
         this.tree = tree;
     }
+    
+    
+    @Override
+    public String toString() {
+        return "Class : fileVisitors.visitor.PrimeLength";
+    }
 }
