@@ -1,12 +1,14 @@
 package fileVisitors.myTree;
 
+import element.ElementI;
+import fileVisitors.visitor.VisitorI;
 import java.util.ArrayList;
 
 /**
  * @version 4.0
  * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
  */
-public class MyTree{
+public class MyTree implements ElementI {
 
     private Node root;
 
@@ -20,7 +22,8 @@ public class MyTree{
 
     /**
      * getter method of root node
-     * @return 
+     *
+     * @return
      */
     public Node getRoot() {
         return root;
@@ -28,7 +31,8 @@ public class MyTree{
 
     /**
      * Thread-safe method for inserting the nodes.
-     * @param wordIn 
+     *
+     * @param wordIn
      */
     public void insert(String wordIn) {
         //MyLogger.writeMessage("Thread is running - " + this.toString(), MyLogger.DebugLevel.WORD_INSERTION);
@@ -44,9 +48,9 @@ public class MyTree{
 
     /**
      * Thread safe method for performing insertion operations.
-     * 
+     *
      * @param node
-     * @param wordIn 
+     * @param wordIn
      */
     public void insertNode(Node node, String wordIn) {
         if (node.getWord().compareTo(wordIn) > 0) {
@@ -66,6 +70,7 @@ public class MyTree{
 
     /**
      * Searches the particular node with the input word in the tree.
+     *
      * @return Node - null if node not present, else returns the node
      */
     public Node searchNode(Node node, String wordIn) {
@@ -82,18 +87,19 @@ public class MyTree{
 
     /**
      * Prints the tree words in the sorted fashion using in-order traversal.
+     *
      * @param current_node
-     * @param results 
+     * @param results
      */
-
     /**
      * Prints the final counts of the tree status.
-     * @param results 
+     *
+     * @param results
      */
     public void printCounts(ArrayList<String> results) {
-        results.add("The total number of words: " + String.valueOf(finalWordCount));
-        results.add("The total number of characters: " + String.valueOf(finalCharCount));
-        results.add("The total number of distinct words: " + String.valueOf(distinctWordCount));
+        //results.add("The total number of words: " + String.valueOf(finalWordCount));
+        //results.add("The total number of characters: " + String.valueOf(finalCharCount));
+        //results.add("The total number of distinct words: " + String.valueOf(distinctWordCount));
     }
 
     @Override
@@ -101,4 +107,8 @@ public class MyTree{
         return "Class : wordTree.myTree.MyTree"; //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public void accept(VisitorI visitor) {
+        visitor.visit(this);
+    }
 }
