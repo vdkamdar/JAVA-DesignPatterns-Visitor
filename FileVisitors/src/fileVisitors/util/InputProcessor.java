@@ -1,26 +1,27 @@
 package fileVisitors.util;
 
-import fileVisitors.myTree.MyTree;
+import fileVisitors.element.MyTree;
 
 /**
- * @version 4.0
- * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
+ * @version 5.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public class InputProcessor {
+
     MyTree myTreeInstance = null;
-    
-    public InputProcessor(){
+
+    public InputProcessor() {
         Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
     }
-    
+
     public String[] processInput(String inputLine) {
         String[] inputPass = inputLine.split("[^a-zA-Z0-9']+");
-        return inputPass;        
+        return inputPass;
     }
 
     @Override
     public String toString() {
         return "Class : wordTree.util.InputProcessor"; //To change body of generated methods, choose Tools | Templates.
     }
-        
+
 }

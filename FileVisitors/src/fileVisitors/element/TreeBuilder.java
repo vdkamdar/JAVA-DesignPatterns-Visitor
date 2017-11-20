@@ -1,34 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package element;
-
-import fileVisitors.myTree.MyTree;
-import fileVisitors.visitor.VisitorI;
+package fileVisitors.element;
 
 /**
- *
- * @author vidhi
+ * @version 5.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public class TreeBuilder {
 
     MyTree tree = null;
-    
-    public void setTree(MyTree treeIn){
+
+    public void setTree(MyTree treeIn) {
         this.tree = treeIn;
     }
-    
-    public MyTree getTree(){
+
+    public MyTree getTree() {
         return tree;
     }
 
     public void insert(String wordIn) {
         this.tree.insert(wordIn);
     }
-    
-    public void getRoot(){
-        
+
+    public void getRoot() {
+
     }
 }

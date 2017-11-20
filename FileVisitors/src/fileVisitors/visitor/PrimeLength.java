@@ -1,9 +1,10 @@
 package fileVisitors.visitor;
 
-import element.ElementI;
-import element.TreeBuilder;
-import fileVisitors.myTree.MyTree;
+import fileVisitors.element.ElementI;
+import fileVisitors.element.TreeBuilder;
+import fileVisitors.element.MyTree;
 import fileVisitors.myTree.Node;
+import fileVisitors.util.Logger;
 
 /**
  *
@@ -13,15 +14,20 @@ public class PrimeLength implements VisitorI {
 
     MyTree tree = null;
 
+    public PrimeLength() {
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
+    }
+
     @Override
     public void visit(MyTree tree) {
+        Logger.writeMessage(this.toString() + " visit() method is called", Logger.DebugLevel.VISITOR_ACTIVE);
         traverseTree(tree.getRoot());//??
     }
 
     void traverseTree(Node current_node) {
         if (current_node == null) {
             return;
-        }      
+        }
         traverseTree(current_node.getLeft());
         if (isWordLengthPrime(current_node.getWord())) {
             String newWord = current_node.getWord() + "-PRIME";
@@ -29,7 +35,7 @@ public class PrimeLength implements VisitorI {
         }
         traverseTree(current_node.getRight());
     }
-    
+
     public boolean isWordLengthPrime(String nodeWord) {
         int length = nodeWord.length();
 

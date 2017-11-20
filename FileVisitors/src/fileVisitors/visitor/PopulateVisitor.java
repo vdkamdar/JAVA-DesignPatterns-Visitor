@@ -1,8 +1,9 @@
 package fileVisitors.visitor;
 
-import fileVisitors.myTree.MyTree;
+import fileVisitors.element.MyTree;
 import fileVisitors.util.FileProcessor;
 import fileVisitors.util.InputProcessor;
+import fileVisitors.util.Logger;
 
 /**
  *
@@ -14,12 +15,16 @@ public class PopulateVisitor implements VisitorI {
     InputProcessor ip = null;
     MyTree tree = null;
 
+    public PopulateVisitor() {
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
+    }
+
     @Override
     public void visit(MyTree tree) {
-       
+        Logger.writeMessage(this.toString() + " visit() method is called", Logger.DebugLevel.VISITOR_ACTIVE);
         String line = "";
-       
-        while((line = fp.readLine()) != null){
+
+        while ((line = fp.readLine()) != null) {
             String[] inputParse = ip.processInput(line);
             for (int i = 0; i < inputParse.length; i++) {
                 tree.insert(inputParse[i]);
@@ -31,12 +36,12 @@ public class PopulateVisitor implements VisitorI {
     public void setFileProcessor(FileProcessor fp) {
         this.fp = fp;
     }
-    
-    public void setInputProcessor(InputProcessor ip){
+
+    public void setInputProcessor(InputProcessor ip) {
         this.ip = ip;
     }
-        
-    public MyTree getTree(){
+
+    public MyTree getTree() {
         return tree;
     }
 }

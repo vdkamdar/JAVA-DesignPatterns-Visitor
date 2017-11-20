@@ -1,12 +1,13 @@
-package fileVisitors.myTree;
+package fileVisitors.element;
 
-import element.ElementI;
+import fileVisitors.myTree.Node;
+import fileVisitors.util.Logger;
 import fileVisitors.visitor.VisitorI;
 import java.util.ArrayList;
 
 /**
- * @version 4.0
- * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
+ * @version 3.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public class MyTree implements ElementI {
 
@@ -16,7 +17,7 @@ public class MyTree implements ElementI {
      * public constructor of the class
      */
     public MyTree() {
-        //MyLogger.writeMessage("Constructor called - " + this.toString(), MyLogger.DebugLevel.CONSTRUCTOR);
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
         root = null;
     }
 
@@ -30,12 +31,11 @@ public class MyTree implements ElementI {
     }
 
     /**
-     * Thread-safe method for inserting the nodes.
+     * method for inserting the nodes.
      *
      * @param wordIn
      */
     public void insert(String wordIn) {
-        //MyLogger.writeMessage("Thread is running - " + this.toString(), MyLogger.DebugLevel.WORD_INSERTION);
         if (root == null) {
             this.root = new Node(wordIn);
         } else {
@@ -47,7 +47,7 @@ public class MyTree implements ElementI {
     }
 
     /**
-     * Thread safe method for performing insertion operations.
+     * Method for performing insertion operations.
      *
      * @param node
      * @param wordIn
@@ -104,11 +104,12 @@ public class MyTree implements ElementI {
 
     @Override
     public String toString() {
-        return "Class : wordTree.myTree.MyTree"; //To change body of generated methods, choose Tools | Templates.
+        return "Class : fileVisitors.element.MyTree"; //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void accept(VisitorI visitor) {
+        Logger.writeMessage("Visitor's accept() method is called - " + this.toString(), Logger.DebugLevel.ELEMENT_ACCEPT);
         visitor.visit(this);
     }
 }

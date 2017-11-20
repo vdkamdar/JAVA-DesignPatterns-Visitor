@@ -1,11 +1,12 @@
 package fileVisitors.visitor;
 
-import fileVisitors.myTree.MyTree;
+import fileVisitors.element.MyTree;
 
 /**
- *
- * @author anirtek
+ * @version 4.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public interface VisitorI {
+
     public void visit(MyTree tree);
 }

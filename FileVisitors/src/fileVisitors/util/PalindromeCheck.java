@@ -1,17 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fileVisitors.util;
 
 /**
- *
- * @author vidhi
+ * @version 1.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public class PalindromeCheck {
 
+    public PalindromeCheck() {
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
+    }
+    
+
     public boolean isPalindrome(String nodeWord) {
+        Logger.writeMessage("checking palindrome :" + this.toString(), Logger.DebugLevel.PALINDROME_CHECK);
         int i1 = 0;
         int i2 = nodeWord.length() - 1;
         //Ignores case

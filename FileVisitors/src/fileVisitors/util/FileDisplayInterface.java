@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fileVisitors.util;
 
-import fileVisitors.myTree.MyTree;
-
 /**
- *
- * @author vidhi
+ * @version 5.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
+import fileVisitors.element.MyTree;
+
 public interface FileDisplayInterface {
+
     public void writeSchedulesToFile(MyTree tree);
 }

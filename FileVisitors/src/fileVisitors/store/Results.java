@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fileVisitors.store;
 
-import fileVisitors.myTree.MyTree;
+import fileVisitors.element.MyTree;
 import fileVisitors.util.FileDisplayInterface;
+import fileVisitors.util.Logger;
 import fileVisitors.util.StdoutDisplayInterface;
 import java.io.File;
 import java.io.FileWriter;
@@ -15,8 +11,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
- *
- * @author vidhi
+ * @version 5.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 
@@ -30,7 +26,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
      * @param outputFileName
      */
     public Results(String outputFileName) {
-        //MyLogger.writeMessage("Constructor called - " + this.toString(), MyLogger.DebugLevel.CONSTRUCTOR);
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
         this.outputFile = outputFileName;
         status = new ArrayList();
     }
@@ -47,9 +43,9 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
     /**
      * Navigates on the local output Array List and writes each line into the
      * respective output file.
+     *
      * @param tree
      */
-    @Override
     public void writeSchedulesToFile(MyTree tree) {
         for (int i = 0; i < status.size(); i++) {
             writeToFile(status.get(i));
@@ -76,14 +72,15 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 
     @Override
     public String toString() {
-        return "Class : wordTree.store.Results"; //To change body of generated methods, choose Tools | Templates.
+        return "Class : fileVisitors.store.Results"; //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
-     * Overriden method for writing the output to screen.
+     * Overridden method for writing the output to screen.
      */
     @Override
     public void writeToScreen() {
         //MyLogger.writeMessage(outputFile, MyLogger.DebugLevel.RELEASE);
     }
+
 }

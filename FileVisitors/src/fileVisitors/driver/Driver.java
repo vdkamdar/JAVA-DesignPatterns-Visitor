@@ -1,7 +1,7 @@
 package fileVisitors.driver;
 
-import element.TreeBuilder;
-import fileVisitors.myTree.MyTree;
+import fileVisitors.element.MyTree;
+import fileVisitors.element.TreeBuilder;
 import fileVisitors.store.Results;
 import fileVisitors.util.FileProcessor;
 import fileVisitors.util.InputProcessor;
@@ -13,8 +13,8 @@ import fileVisitors.visitor.PrintTree;
 import java.util.ArrayList;
 
 /**
- * @version 4.0
- * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
+ * @version 5.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public class Driver {
 
@@ -65,27 +65,26 @@ public class Driver {
          * Create an instance of MyTree
          */
         MyTree tree = new MyTree();
-        
+
         PopulateVisitor pVisitor = new PopulateVisitor();
         pVisitor.setFileProcessor(fileProc);
         pVisitor.setInputProcessor(inputProc);
         tree.accept(pVisitor);
-        
+
         PalindromeHighlight phVisitor = new PalindromeHighlight();
         tree.accept(phVisitor);
-        
+
         PrimeLength plVisitor = new PrimeLength();
         tree.accept(plVisitor);
-        
+
         Results results = new Results(outputFile);
-        
+
         PrintTree ptVisitor = new PrintTree(results);
         tree.accept(ptVisitor);
 
         /**
          * Create instance of Results
          */
-        
         results.writeToScreen();
         results.writeSchedulesToFile(tree);
     }

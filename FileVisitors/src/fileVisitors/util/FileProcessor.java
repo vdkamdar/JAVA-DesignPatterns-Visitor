@@ -8,13 +8,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 /**
  * @version 5.0
- * @author Aniruddha Tekade & Vidhi Kamdar Submitted on November 8th, 2017.
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
-public class FileProcessor{
+public class FileProcessor {
+
     private String inputFileName = "", outputFileName = "";
     private Scanner in = null;
 
@@ -26,7 +26,7 @@ public class FileProcessor{
      * @param outputFileIn
      */
     public FileProcessor(String inputFileIn, String outputFileIn) {
-        //Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
         if (inputFileIn == null) {
             System.err.println("Input File name is null!");
             System.exit(0);
@@ -43,7 +43,7 @@ public class FileProcessor{
         try {
             in = new Scanner(inputFile);
         } catch (FileNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FileProcessor.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("File Not Found! Please try again");
         }
     }
 

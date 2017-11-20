@@ -1,24 +1,28 @@
 package fileVisitors.visitor;
 
-import element.ElementI;
-import fileVisitors.myTree.MyTree;
+import fileVisitors.element.ElementI;
+import fileVisitors.element.MyTree;
 import fileVisitors.myTree.Node;
 import fileVisitors.store.Results;
+import fileVisitors.util.Logger;
 import java.util.ArrayList;
 
 /**
- *
- * @author anirtek
+ * @version 4.0
+ * @author Vidhi Kamdar & Aniruddha Tekade Submitted on November 22nd, 2017.
  */
 public class PrintTree implements VisitorI {
-   Results results = null;
-   
-    public PrintTree(Results results){
+
+    Results results = null;
+
+    public PrintTree(Results results) {
+        Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
         this.results = results;
     }
 
     @Override
     public void visit(MyTree tree) {
+        Logger.writeMessage(this.toString() + " visit() method is called", Logger.DebugLevel.VISITOR_ACTIVE);
         printNodes(tree.getRoot());
     }
 
