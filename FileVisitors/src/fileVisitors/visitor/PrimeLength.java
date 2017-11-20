@@ -1,10 +1,9 @@
 package fileVisitors.visitor;
 
-import fileVisitors.element.ElementI;
-import fileVisitors.element.TreeBuilder;
 import fileVisitors.element.MyTree;
 import fileVisitors.myTree.Node;
 import fileVisitors.util.Logger;
+import static java.lang.Math.sqrt;
 
 /**
  *
@@ -42,7 +41,7 @@ public class PrimeLength implements VisitorI {
         if (length == 0 || length == 1) {
             return false;
         }
-        for (int i = 2; i <= (length / 2); ++i) {
+        for (int i = 2; i <= sqrt(length); ++i) {
             if (length % i == 0) {
                 return false;
             }
@@ -57,8 +56,7 @@ public class PrimeLength implements VisitorI {
     public void setTree(MyTree tree) {
         this.tree = tree;
     }
-    
-    
+
     @Override
     public String toString() {
         return "Class : fileVisitors.visitor.PrimeLength";
