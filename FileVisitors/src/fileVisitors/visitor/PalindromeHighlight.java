@@ -1,6 +1,5 @@
 package fileVisitors.visitor;
 
-import element.ElementI;
 import fileVisitors.myTree.MyTree;
 import fileVisitors.myTree.Node;
 import fileVisitors.util.PalindromeCheck;
@@ -17,9 +16,9 @@ public class PalindromeHighlight implements VisitorI {
     //getTree from PopulateVisitor here or driver?
     
     @Override
-    public void visit(ElementI element) {
+    public void visit(MyTree tree) {
         check = new PalindromeCheck();
-        traverseTree(tree.root);//??
+        traverseTree(tree.getRoot());//??
     }
 
     void traverseTree(Node current_node) {
@@ -43,13 +42,5 @@ public class PalindromeHighlight implements VisitorI {
 
     void capitalizeWord(Node current_node) {
         current_node.setWord(current_node.getWord().toUpperCase());
-    }
-
-    public MyTree getTree(){
-        return tree;
-    }
-    
-    public void setTree(MyTree tree){
-        this.tree = tree;
     }
 }
