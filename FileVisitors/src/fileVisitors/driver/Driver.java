@@ -2,6 +2,7 @@ package fileVisitors.driver;
 
 import element.TreeBuilder;
 import fileVisitors.myTree.MyTree;
+import fileVisitors.store.Results;
 import fileVisitors.util.FileProcessor;
 import fileVisitors.util.InputProcessor;
 import fileVisitors.util.Logger;
@@ -64,33 +65,28 @@ public class Driver {
          * Create an instance of MyTree
          */
         MyTree tree = new MyTree();
-        TreeBuilder builder = new TreeBuilder();
-        builder.setTree(tree);
         
         PopulateVisitor pVisitor = new PopulateVisitor();
         pVisitor.setFileProcessor(fileProc);
         pVisitor.setInputProcessor(inputProc);
-        pVisitor.setTreeBuilder(builder);
-        builder.accept(pVisitor);
+        tree.accept(pVisitor);
         
         PalindromeHighlight phVisitor = new PalindromeHighlight();
-        builder.setTree(pVisitor.getTree());
-        builder.accept(phVisitor);
+        tree.accept(phVisitor);
         
         PrimeLength plVisitor = new PrimeLength();
-        builder.setTree(phVisitor.getTree());
-        builder.accept(plVisitor);
+        tree.accept(plVisitor);
         
-        PrintTree ptVisitor = new PrintTree();
-        builder.setTree(plVisitor.getTree());
-        builder.accept(ptVisitor);
+        Results results = new Results(outputFile);
+        
+        PrintTree ptVisitor = new PrintTree(results);
+        tree.accept(ptVisitor);
 
         /**
          * Create instance of Results
          */
-//        Results results = new Results(outputFile);
-
-//        results.writeToScreen();
-//        results.writeSchedulesToFile(tree);
+        
+        results.writeToScreen();
+        results.writeSchedulesToFile(tree);
     }
 }
