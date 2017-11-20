@@ -1,6 +1,7 @@
 package fileVisitors.visitor;
 
 import element.ElementI;
+import element.TreeBuilder;
 import fileVisitors.myTree.MyTree;
 import fileVisitors.myTree.Node;
 
@@ -13,8 +14,8 @@ public class PrimeLength implements VisitorI {
     MyTree tree = null;
 
     @Override
-    public void visit(ElementI element) {
-        traverseTree(tree.root);//??
+    public void visit(MyTree tree) {
+        traverseTree(tree.getRoot());//??
     }
 
     void traverseTree(Node current_node) {
