@@ -40,8 +40,4 @@ public class PrintTree implements VisitorI {
     public String toString() {
         return "Class : fileVisitors.visitor.PrintTree";
     }
-
-    public void setResults(Results resultsIn) {
-        this.results = resultsIn;
-    }
 }
