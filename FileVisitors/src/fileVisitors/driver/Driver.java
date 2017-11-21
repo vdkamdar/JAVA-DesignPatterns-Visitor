@@ -80,6 +80,11 @@ public class Driver {
         Results results = new Results(outputFile);
 
         PrintTree ptVisitor = new PrintTree(results);
+        /**
+         * Setting Results class instance as the member of PrintTree visitor.
+         * As per the email clarified requirement.
+         */
+        ptVisitor.setResults(results);
         tree.accept(ptVisitor);
 
         /**
