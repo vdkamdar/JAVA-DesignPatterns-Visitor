@@ -2,24 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/util/InputProcessor.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/element/ElementI.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/store/Results.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/driver/Driver.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/util/FileDisplayInterface.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/visitor/PrimeLength.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/element/TreeBuilder.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/util/FileProcessor.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/util/StdoutDisplayInterface.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/myTree/Node.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/util/Logger.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/visitor/PopulateVisitor.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/visitor/VisitorI.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/element/MyTree.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/visitor/PalindromeHighlight.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/util/PalindromeCheck.java</file>
-            <file>file:/home/anirtek/NetBeansProjects/aniruddha_tekade_vidhi_kamdar_assign_5/FileVisitors/src/fileVisitors/visitor/PrintTree.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
