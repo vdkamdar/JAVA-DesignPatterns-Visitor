@@ -28,6 +28,10 @@ public class Driver {
         String inputFile = null;
         String outputFile = null;
         int debugLevel = 0;
+        if(args.length < 3 || args.length > 3) {
+        	System.err.println("Invalid number of arguments! Exiting the program.");
+        	System.exit(0);
+        }
         try {
             if (args.length == 3) {
                 inputFile = args[0];
