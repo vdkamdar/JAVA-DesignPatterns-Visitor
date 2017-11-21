@@ -33,11 +33,12 @@ public class Driver {
         	System.exit(0);
         }
         try {
+            //System.out.println("args len = " + args.length);
             if (args.length == 3) {
                 inputFile = args[0];
                 outputFile = args[1];
                 try {
-                    if (args[2].matches(".*[0-4].*")) {
+                    if (args[2].matches("[0-4]")) {
                         debugLevel = Integer.parseInt(args[2]);
                         Logger.setDebugValue(debugLevel);
                     } else {
