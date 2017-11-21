@@ -24,6 +24,8 @@ public class PrintTree implements VisitorI {
     public void visit(MyTree tree) {
         Logger.writeMessage(this.toString() + " visit() method is called", Logger.DebugLevel.VISITOR_ACTIVE);
         printNodes(tree.getRoot());
+        results.writeToScreen();
+        results.writeSchedulesToFile(tree);
     }
 
     public void printNodes(Node current_node) {
@@ -34,8 +36,7 @@ public class PrintTree implements VisitorI {
         results.storeLine(current_node.getWord());
         printNodes(current_node.getRight());
     }
-    
-    
+
     @Override
     public String toString() {
         return "Class : fileVisitors.visitor.PrintTree";

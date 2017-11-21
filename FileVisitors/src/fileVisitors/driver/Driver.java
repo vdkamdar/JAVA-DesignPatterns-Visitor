@@ -86,10 +86,5 @@ public class Driver {
          */
         tree.accept(ptVisitor);
 
-        /**
-         * Create instance of Results
-         */
-        results.writeToScreen();
-        results.writeSchedulesToFile(tree);
     }
 }
