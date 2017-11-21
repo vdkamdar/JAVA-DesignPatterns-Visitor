@@ -38,7 +38,8 @@
     <!-- for just java files use *.java -->
 
     <target name="fileVisitors" depends="prepare">
-        <javac srcdir="${src}"
+        <javac includeantruntime="false"
+        	srcdir="${src}"
             includes="fileVisitors/**"
             excludes="**/package.html"
             destdir="${classes}"

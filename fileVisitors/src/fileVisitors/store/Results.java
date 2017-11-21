@@ -16,8 +16,8 @@ import java.util.ArrayList;
  */
 public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 
-    private String outputFile = "";
-    public ArrayList<String> status;
+    private String outputFile = null;
+    public ArrayList<String> status = null;
 
     /**
      * Constructor of the Results class.
@@ -28,7 +28,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
     public Results(String outputFileName) {
         Logger.writeMessage("Constructor called - " + this.toString(), Logger.DebugLevel.CONSTRUCTOR);
         this.outputFile = outputFileName;
-        status = new ArrayList();
+        status = new ArrayList<String>();
     }
 
     /**
