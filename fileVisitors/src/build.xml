@@ -39,7 +39,7 @@
 
     <target name="fileVisitors" depends="prepare">
         <javac srcdir="${src}"
-            includes="fileVisitor/**"
+            includes="fileVisitors/**"
             excludes="**/package.html"
             destdir="${classes}"
             classpath="${classes}"

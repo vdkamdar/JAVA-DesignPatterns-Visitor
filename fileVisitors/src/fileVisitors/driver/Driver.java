@@ -33,11 +33,11 @@ public class Driver {
                 inputFile = args[0];
                 outputFile = args[1];
                 try {
-                    if (args[args.length - 1].matches(".*[0-4].*")) {
-                        debugLevel = Integer.parseInt(args[args.length - 1]);
+                    if (args[2].matches(".*[0-4].*")) {
+                        debugLevel = Integer.parseInt(args[2]);
                         Logger.setDebugValue(debugLevel);
                     } else {
-                        throw new IllegalArgumentException("The argument " + args[args.length - 1] + " is invalid. Please enter debug level between 0 and 4.");
+                        throw new IllegalArgumentException("The argument " + args[2] + " is invalid. Please enter debug level between 0 and 4.");
                     }
                 } catch (NumberFormatException ex) {
                     System.err.println(ex);

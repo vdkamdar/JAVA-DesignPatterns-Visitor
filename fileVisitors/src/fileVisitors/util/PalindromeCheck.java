@@ -12,25 +12,12 @@ public class PalindromeCheck {
 
     public boolean isPalindrome(String nodeWord) {
         Logger.writeMessage("checking palindrome :" + this.toString(), Logger.DebugLevel.PALINDROME_CHECK);
-//        
-//        int i1 = 0;
-//        int i2 = nodeWord.length() - 1;
-//        //Ignores case
-//        String[] nodeWordArr = (nodeWord.toLowerCase()).split("");
-//        while (i2 > i1) {
-//            if (nodeWordArr[i1] != nodeWordArr[i2]) {
-//                return false;
-//            }
-//            ++i1;
-//            --i2;
-//        }
         String reverseWord = new StringBuffer(nodeWord).reverse().toString();
         if (reverseWord.equals(nodeWord)) {
             return true;
         } else {
             return false;
         }
-
     }
 
     @Override

@@ -46,7 +46,6 @@ public class PalindromeHighlight implements VisitorI {
     }
 
     void capitalizeWord(Node current_node) {
-        System.out.println(current_node.getWord().toUpperCase());
         current_node.setWord(current_node.getWord().toUpperCase());
     }
 
