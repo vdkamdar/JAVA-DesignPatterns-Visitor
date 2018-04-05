@@ -1,9 +1,4 @@
-# CS 542 : Programming Assignment 05 #
-
-## What is this repository for? ##
-
-This is a group programming assignment of CS 542-Programming the design patterns.
-The assignment is based on the implementation of VISITOR PATTERN.
+# JAVA-DesignPatterns-Visitor #
 
 ## Data Structure(s) Used ##
 
